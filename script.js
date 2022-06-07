@@ -141,6 +141,7 @@ async function onMakeGoblin() {
 
 
 async function updateUI() {
+  getGoblins();
   myTimeout = setTimeout( getGoblins, 10000 );
 }
 
