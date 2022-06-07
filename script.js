@@ -49,6 +49,7 @@ function init() {
     border: "rgba(195, 195, 195, 0.14)",
     hover: "rgb(16, 26, 32)"
   });
+
 }
 
 async function fetchAccountData() {
@@ -86,10 +87,9 @@ async function makeGoblin() {
 
 async function onConnect() {
 
-  web3 = new Web3(provider);
-
   try {
     provider = await web3Modal.connect();
+    web3 = new Web3(provider);
   } catch(e) {
     console.log("Could not get a wallet connection", e);
     return;
