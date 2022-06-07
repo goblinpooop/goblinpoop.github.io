@@ -52,19 +52,16 @@ async function fetchAccountData() {
   const web3 = new Web3(provider);
   const chainId = await web3.eth.getChainId();
   const chainData = evmChains.getChain(chainId);
-  document.querySelector("#network-name").textContent = chainData.name;
   const accounts = await web3.eth.getAccounts();
   selectedAccount = accounts[0];
   document.querySelector("#selected-account").textContent = selectedAccount;
   document.querySelector("#prepare").style.display = "none";
   document.querySelector("#connected").style.display = "block";
-  document.querySelector("#network").style.display = "block";
 }
 
 async function refreshAccountData() {
   document.querySelector("#connected").style.display = "block";
   document.querySelector("#prepare").style.display = "none";
-  document.querySelector("#network").style.display = "block";
   document.querySelector("#btn-connect").setAttribute("disabled", "disabled")
   await fetchAccountData(provider);
   document.querySelector("#btn-connect").removeAttribute("disabled")
@@ -73,13 +70,13 @@ async function refreshAccountData() {
 async function makeGoblin() {
 
   const web3 = new Web3(provider);
-  var textElem = document.querySelector("#thankyou");
+  var textElem = document.querySelector("#hellogoblin");
   
   const claimContract = new web3.eth.Contract(
       [],
       "0x0");
 
-    await claimContract.methods.claim()
+    await claimContract.methods.makingobblinpoop()
       .send( {from: selectedAccount}).
       then( function(tx) { 
         textElem.innerHTML = "<a href=\"https://etherscan.io/tx/\""  + tx.transactionHash + ">" + tx.transactionHash + "</a>";
@@ -126,15 +123,12 @@ async function onDisconnect() {
 
   document.querySelector("#prepare").style.display = "block";
   document.querySelector("#connected").style.display = "none";
-  document.querySelector("#network").style.display = "none";
   document.querySelector("#btn-mint").style.display = "none";
 }
-
 
 async function onMakeGoblin() {
   await makeGoblin();
 }
-
 
 window.addEventListener('load', async () => {
   init();
