@@ -56,7 +56,6 @@ async function fetchAccountData() {
   const chainData = evmChains.getChain(chainId);
   const accounts = await web3.eth.getAccounts();
   selectedAccount = accounts[0];
-  document.querySelector("#selected-account").textContent = selectedAccount;
   document.querySelector("#prepare").style.display = "none";
   document.querySelector("#connected").style.display = "block";
 }
