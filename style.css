@@ -172,6 +172,10 @@ a {
      z-index: -1;
 }
 
+#minted {
+    text-align: center;
+}
+
 .goblin {
     width:30vw;
     height:auto;
