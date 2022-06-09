@@ -108,6 +108,32 @@ body {
     }
 }
 
+footer{
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.footer {
+    height: 180px;
+    margin: auto;
+    width: 100vw;
+    text-align:left;
+    padding:10px;
+    text-align: center;
+}
+
+.left {
+    
+    display:inline-block;
+}
+
+.right {
+    padding-left:100px;
+ 
+    display:inline-block;
+}
+
 a:hover{
     color: var(--nav-color-hover);
     border-radius: 190px
